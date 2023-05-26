@@ -24,13 +24,16 @@ class ProxySpiderExtractor(BaseExtractor):
         password = data["data"]["servers"]["5081"]["credentials"]["password"]
 
         for raw_proxy in data["data"]["servers"]["5081"]['proxies']:
+            ip, str_port = raw_proxy["proxy"].split(':')
+
             proxies.append(
                 Proxy(
                     proxy_type='http',
                     username=username,
                     password=password,
-                    ip=raw_proxy["proxy"],
-                    region=raw_proxy["country"]
+                    ip=ip,
+                    port=int(str_port),
+                    region=raw_proxy["country"],
                 )
             )
 

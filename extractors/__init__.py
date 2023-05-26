@@ -1,6 +1,6 @@
 import importlib
 
-_EXTRACTORS = ['.proxy_spider']
+_EXTRACTORS = ['.proxy_spider', '.vpnly']
 ALL_EXTRACTORS = set()
 
 for extractor_name in _EXTRACTORS:

@@ -7,4 +7,5 @@ class Proxy:
     username: str
     password: str
     ip: str
+    port: int
     region: str
