@@ -8,7 +8,7 @@ class VPNLYExtractor(BaseExtractor):
         data = cls.requests_instance.get(
             'https://s3.hub-vpn.com/servers.json'
         ).json()
-    
+
         for raw_proxy in data:
             proxies.append(
                 Proxy(
@@ -16,7 +16,10 @@ class VPNLYExtractor(BaseExtractor):
                     username=raw_proxy['user'],
                     password=raw_proxy['pass'],
                     ip=raw_proxy["host"],
+                    port=['port'],
                     region=raw_proxy['city']['country']['code'],
                 )
             )
         return proxies
+
+EXTRACTOR = VPNLYExtractor

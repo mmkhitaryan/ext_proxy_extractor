@@ -38,3 +38,5 @@ class ProxySpiderExtractor(BaseExtractor):
             )
 
         return proxies
+
+EXTRACTOR = ProxySpiderExtractor
