@@ -1,6 +1,6 @@
 import importlib
 
-_EXTRACTORS = ['vpnly', '1clickvpn']
+_EXTRACTORS = ['vpnly', '1clickvpn', 'nucleusvpn']
 ALL_EXTRACTORS = set()
 
 for extractor_name in _EXTRACTORS:
